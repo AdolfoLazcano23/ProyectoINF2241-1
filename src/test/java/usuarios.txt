@@ -1,0 +1,5 @@
+Camilo;Vasquez;Quilpue;CargoEjemplo1;976567232;55123456
+Eduardo;Quitana;Valparaiso;CargoEjemplo2;976576231;44123456
+Juan;Jose;Limache;CargoEjemplo3;967821291;33333333
+Antonio;Sepulveda;Quillota;CargoEjemplo4;976757473;22123456
+Esteban;Contreras;Santiago;CargoEjemplo5;911223344;11123456
