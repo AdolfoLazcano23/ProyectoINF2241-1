@@ -1,7 +1,7 @@
 
 package proyecto;
 
-public class Empresa {
+public class Empresa implements Metodos{
     
     private String Nombre;
     private String Rut;
@@ -40,6 +40,15 @@ public class Empresa {
     
     public void setRut(String Rut){
         this.Rut = Rut;
+    }
+    public void Crear(){
+        
+    }
+    public void Mostrar(){
+    
+    }
+    public void Eliminar(String N){
+        
     }
     
 }

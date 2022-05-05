@@ -3,6 +3,7 @@ package proyecto;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class Menu {
         this.usuario = "Usuario";
     }
     
-    public static void desplegarMenuPrincipal() {
+    public static void desplegarMenuPrincipal() throws IOException {
        Scanner teclado = new Scanner(System.in);
         int opcion;
         
@@ -55,7 +56,7 @@ public class Menu {
         } while (opcion == 0);
     }
 
-    public static void menuOfertaTrabajo() {
+    public static void menuOfertaTrabajo() throws IOException {
 
         Scanner teclado = new Scanner(System.in);
         int opcion;
@@ -72,12 +73,12 @@ public class Menu {
             switch (opcion) {
                 
                 case 1:
-                    OfertaLaboral.IngresarOferta();
+                    OfertaLaboral.Crear();
                     break;
                 case 2:
                     System.out.println("Ingrese Cargo: ");
                     Cargo = teclado.next();
-                    OfertaLaboral.EliminarOferta(Cargo);
+                    OfertaLaboral.Eliminar(Cargo);
                     break;
                 case 3:
                     System.out.println("Actualizado");
@@ -88,7 +89,7 @@ public class Menu {
                     System.out.println("2-  MOSTRAR POR SUELDO");
                     opc = teclado.nextInt(); 
                     if (opc==1)
-                        OfertaLaboral.MostrarOferta();
+                        OfertaLaboral.Mostrar();
                     else{
                         System.out.println("Ingrese Sueldo: ");
                         Sueldo = teclado.nextInt();
@@ -102,7 +103,7 @@ public class Menu {
         } while (opcion != 5);
     }
 
-    public static void menuCurso() {
+    public static void menuCurso() throws IOException {
 
         Scanner teclado = new Scanner(System.in);
         int opcion;
@@ -116,14 +117,14 @@ public class Menu {
 
             switch (opcion) {
                 case 1: {
-                    Cursos.IngresarCurso();
+                    Cursos.Crear();
                     break;
                 }
                 case 2: {
                     String Nombre;
                     System.out.println("Ingrese nombre: ");
                     Nombre = teclado.next();
-                    Cursos.EliminarCurso(Nombre);
+                    Cursos.Eliminar(Nombre);
                     break;
                 }
                 case 3: {
@@ -136,7 +137,7 @@ public class Menu {
                     System.out.println("2-   MOSTRAR POR SUELDO");
                     opc2 = teclado.nextInt();
                     if (opc2==1)
-                        Cursos.MostrarCursos();
+                        Cursos.Mostrar();
                     else{
                         System.out.println("Ingrese costo: ");
                         costo = teclado.nextInt();
@@ -152,7 +153,7 @@ public class Menu {
         } while (opcion!= 5);
     }
 
-    public static void menuUsuario(){
+    public static void menuUsuario() throws IOException{
         
         usuarios.InsertarDatosArchivo();
         Scanner teclado = new Scanner(System.in);
@@ -167,14 +168,14 @@ public class Menu {
 
             switch (opcion) {
                 case 1: {
-                    usuarios.AgregarUsuario();
+                    usuarios.Crear();
                     break;
                 }
                 case 2: {
                     String Rut;
                     System.out.println("Ingrese rut de Usuario");
                     Rut = teclado.next();
-                    usuarios.EliminarUsuario(Rut);
+                    usuarios.Eliminar(Rut);
                     break;
                 }
                 case 3: {
@@ -182,7 +183,7 @@ public class Menu {
                     break;
                 }
                 case 4: {
-                    usuarios.MostrarUsuarios();
+                    usuarios.Mostrar();
                     System.out.println();
                     break;
                 }

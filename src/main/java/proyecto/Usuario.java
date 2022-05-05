@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Usuario {
+public class Usuario implements Metodos{
     
     private String Nombre,Apellido, Ubicacion, Cargo, Rut;
     private int Telefono;
@@ -119,7 +119,7 @@ public class Usuario {
         
     }
     
-    public void AgregarUsuario() {
+    public void Crear() {
         String nombre,apellido,ubicacion,cargo,rut;
         int telefono,cursosRendidos,trabajosRealizados;
 
@@ -163,7 +163,7 @@ public class Usuario {
         System.out.println("CLiente creado!");
     }
     
-    public void EliminarUsuario(String Rut) {
+    public void Eliminar(String Rut) {
             for (int i=0;i<Lusuarios.size();i++){
                 if (Rut.equals(Lusuarios.get(i).Rut))
                     Lusuarios.remove(i);
@@ -174,11 +174,12 @@ public class Usuario {
         
     }
     
-    public void MostrarUsuarios() throws IOException{
+    public void Mostrar() throws IOException{
         
         int size;
         size = Lusuarios.size();
         ArchivoTrabajos trabajos = new ArchivoTrabajos("TrabajosRealizados.csv");
+        ArchivoCursos cursos = new ArchivoCursos("CursosRealizados.csv");
         
         System.out.println("Lista de usuarios:");
         for(int i=0;i<size;i++){
@@ -204,6 +205,9 @@ public class Usuario {
                 System.out.println("Duracion: "+Lusuarios.get(i).LCursos.get(j).getDuracion());
                 System.out.println("----------");
             }
+            String[] headerdos = {"Nombre","Area","Duracion"};
+            cursos.GenerarCursos(headerdos, LCursos);
+            
             System.out.println("Ubicacion: "+Lusuarios.get(i).Ubicacion);
             System.out.println("");
         }

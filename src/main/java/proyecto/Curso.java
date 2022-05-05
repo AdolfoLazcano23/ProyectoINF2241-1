@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Curso {
+public class Curso implements Metodos{
     
     private String Nombre,Area;
     int Duracion,Costo;
@@ -57,7 +57,7 @@ public class Curso {
     
     
     
-    public void IngresarCurso(){
+    public void Crear(){
         
         String Nombre,Area;
         int Duracion,Costo;
@@ -76,7 +76,7 @@ public class Curso {
         System.out.println("Curso Agregado");
     }
     
-    public void MostrarCursos(){
+    public void Mostrar(){
         
         for (int i=0;i<ListaCursos.size();i++){
             System.out.println("Nombre: "+ListaCursos.get(i).Nombre);
@@ -98,13 +98,12 @@ public class Curso {
         }
     }
     
-    public void EliminarCurso(String Nombre){
+    public void Eliminar(String Nombre){
         
         for (int i=0;i<ListaCursos.size();i++){
             
             if(Nombre.equals(ListaCursos.get(i).Nombre))
                 ListaCursos.remove(i);
         }
-    }
-    
+    }    
 }

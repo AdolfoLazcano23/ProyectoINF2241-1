@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class OfertaTrabajo {
+public class OfertaTrabajo implements Metodos{
     
     private String NombreEmpresa,RutEmpresa,Area,Cargo;
     private int Duracion, Sueldo;
@@ -85,7 +85,7 @@ public class OfertaTrabajo {
     
     
     
-    public void IngresarOferta(){
+    public void Crear(){
         
         String Nombre,Rut,Area,Cargo,Ubicacion;
         int Duracion,Sueldo;
@@ -111,7 +111,7 @@ public class OfertaTrabajo {
         System.out.println("Oferta agregada");
     }
 
-    public void MostrarOferta(){
+    public void Mostrar(){
         
         for (int i=0;i<ListaOferta.size();i++){
             System.out.println("Nombre: "+ListaOferta.get(i).NombreEmpresa);
@@ -142,7 +142,7 @@ public class OfertaTrabajo {
         }
     }
     
-    public void EliminarOferta(String Cargo){
+    public void Eliminar(String Cargo){
         
         for (int i=0;i<ListaOferta.size();i++){
             
