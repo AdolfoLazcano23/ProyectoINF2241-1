@@ -3,6 +3,7 @@ package proyecto;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -173,9 +174,12 @@ public class Usuario {
         
     }
     
-    public void MostrarUsuarios(){
+    public void MostrarUsuarios() throws IOException{
+        
         int size;
         size = Lusuarios.size();
+        ArchivoTrabajos trabajos = new ArchivoTrabajos("TrabajosRealizados.csv");
+        
         System.out.println("Lista de usuarios:");
         for(int i=0;i<size;i++){
             System.out.println("Nombre: "+Lusuarios.get(i).Nombre+" "+Lusuarios.get(i).Apellido);
@@ -190,6 +194,9 @@ public class Usuario {
                 System.out.println("Duracion: "+Lusuarios.get(i).LTrabajos.get(k).getDuracion());
                 System.out.println("----------");
             }
+            String[] header = {"Empresa","Area","Duracion"};
+            trabajos.GenerarTrabajos(header, LTrabajos);
+            
             System.out.println("Cursos Cursados: ");
             for(int j=0;j<Lusuarios.get(i).LCursos.size();j++){
                 System.out.println("Nombre: "+Lusuarios.get(i).LCursos.get(j).getNombre());
