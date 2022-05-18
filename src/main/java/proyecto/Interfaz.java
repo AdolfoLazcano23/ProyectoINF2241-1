@@ -15,5 +15,7 @@ public abstract class Interfaz {
     //CLASE MADRE PARA "TRABAJOSREALIZADOS" Y "CURSOCURSADOS"
     //IMPLEMENTAR METODOS PROPIOS PARA AMBAS CLASES
     
-    
+    public void probar(){
+        
+    }
 }
