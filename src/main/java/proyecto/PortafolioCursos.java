@@ -11,17 +11,17 @@ import java.util.Scanner;
  *
  * @author adolfojr
  */
-public class CursoCursado {
+public class PortafolioCursos extends Portafolio{
     
     private String Nombre,Area;
     int Duracion;
-    private ArrayList<CursoCursado>LCursos = new ArrayList<CursoCursado>();
+    private ArrayList<PortafolioCursos>LCursos = new ArrayList<PortafolioCursos>();
     
-    public CursoCursado(){
+    public PortafolioCursos(){
         
     }
 
-    public CursoCursado(String Nombre, String Area, int Duracion) {
+    public PortafolioCursos(String Nombre, String Area, int Duracion) {
         this.Nombre = Nombre;
         this.Area = Area;
         this.Duracion = Duracion;
@@ -52,7 +52,7 @@ public class CursoCursado {
     }
     
     
-    public void IngresarCurso(){
+    public void Crear(){
         
         Scanner Entrada = new Scanner(System.in);
         String Nombre,Area;
@@ -65,11 +65,19 @@ public class CursoCursado {
         System.out.println("Duracion: ");
         Duracion=Entrada.nextInt();
         
-        LCursos.add(new CursoCursado(Nombre,Area,Duracion));
-        
+        LCursos.add(new PortafolioCursos(Nombre,Area,Duracion));
     }
     
-    public void EliminarCursoCursado(String Nombre){
+    public void Mostrar(){
+        
+        for (int i=0;i<LCursos.size();i++){
+            System.out.println("Nombre: "+LCursos.get(i).Nombre);
+            System.out.println("Area: "+LCursos.get(i).Area);
+            System.out.println("Duracion: "+LCursos.get(i).Duracion);
+        }
+    }
+    
+    public void Eliminar(String Nombre){
     
         for (int i=0;i<LCursos.size();i++){
             if (Nombre.equals(LCursos.get(i).Nombre))
@@ -80,13 +88,4 @@ public class CursoCursado {
     public void ActualizarCursoCursado(){
         
     }
-    
-    public void MostrarCursosCursados(){
-        for (int i=0;i<LCursos.size();i++){
-            System.out.println("Nombre: "+LCursos.get(i).Nombre);
-            System.out.println("Area: "+LCursos.get(i).Area);
-            System.out.println("Duracion: "+LCursos.get(i).Duracion);
-        }
-    }
-    
 }

@@ -11,20 +11,20 @@ import java.util.Scanner;
  *
  * @author adolfojr
  */
-public class TrabajosRealizados {
+public class PortafolioTrabajos extends Portafolio {
     
     private String nombreEmpresa;
     private String Area;
     private int Duracion;
-    private ArrayList<TrabajosRealizados> Trabajos = new ArrayList<TrabajosRealizados>();
+    private ArrayList<PortafolioTrabajos> Trabajos = new ArrayList<PortafolioTrabajos>();
     
     
     
-    public TrabajosRealizados(){
+    public PortafolioTrabajos(){
         
     }
 
-    public TrabajosRealizados(String nombreEmpresa, String Area, int Duracion) {
+    public PortafolioTrabajos(String nombreEmpresa, String Area, int Duracion) {
         this.nombreEmpresa = nombreEmpresa;
         this.Area = Area;
         this.Duracion = Duracion;
@@ -56,16 +56,16 @@ public class TrabajosRealizados {
         this.Duracion = Duracion;
     }
 
-    public ArrayList<TrabajosRealizados> getTrabajos() {
+    public ArrayList<PortafolioTrabajos> getTrabajos() {
         return Trabajos;
     }
 
-    public void setTrabajos(ArrayList<TrabajosRealizados> Trabajos) {
+    public void setTrabajos(ArrayList<PortafolioTrabajos> Trabajos) {
         this.Trabajos = Trabajos;
     }
     
     
-    public void InsertarTrabajos(){
+    public void Crear(){
         String nombreEmpresa,Area;
         int Duracion;
         
@@ -78,10 +78,10 @@ public class TrabajosRealizados {
         System.out.println("Duracion (MESES): ");
         Duracion = Entrada.nextInt();
         
-        Trabajos.add(new TrabajosRealizados(nombreEmpresa,Area,Duracion));
+        Trabajos.add(new PortafolioTrabajos(nombreEmpresa,Area,Duracion));
     }
     
-    public void MostrarTrabajos(){
+    public void Mostrar(){
         
        for (int i=0;i<Trabajos.size();i++){
            System.out.println("Nombre: "+Trabajos.get(i).nombreEmpresa);
@@ -90,7 +90,7 @@ public class TrabajosRealizados {
        }
     }
     
-    public void EliminarTrabajos(String Nombre){
+    public void Eliminar(String Nombre){
         
         for (int i=0;i<Trabajos.size();i++){
             if (Nombre.equals(Trabajos.get(i).nombreEmpresa))

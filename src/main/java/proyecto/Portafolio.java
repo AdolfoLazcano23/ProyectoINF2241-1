@@ -8,14 +8,15 @@ package proyecto;
  *
  * @author adolfojr
  */
-public abstract class Interfaz {
+public abstract class Portafolio {
 
-    public Interfaz() {
+    public Portafolio() {
     }
     //CLASE MADRE PARA "TRABAJOSREALIZADOS" Y "CURSOCURSADOS"
     //IMPLEMENTAR METODOS PROPIOS PARA AMBAS CLASES
+    public abstract void Crear();
+    public abstract void Mostrar();
+    public abstract void Eliminar(String N);
     
-    public void probar(){
-        
-    }
+    
 }

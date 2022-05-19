@@ -14,8 +14,8 @@ public class Usuario implements Metodos{
     Scanner Entrada = new Scanner(System.in);
     
     private ArrayList<Usuario> Lusuarios = new ArrayList<Usuario>();
-    private ArrayList<CursoCursado> LCursos = new ArrayList<CursoCursado>();
-    private ArrayList<TrabajosRealizados> LTrabajos = new ArrayList<TrabajosRealizados>();
+    private ArrayList<PortafolioCursos> LCursos = new ArrayList<PortafolioCursos>();
+    private ArrayList<PortafolioTrabajos> LTrabajos = new ArrayList<PortafolioTrabajos>();
     
     
     Usuario(){
@@ -143,7 +143,7 @@ public class Usuario implements Metodos{
         
         System.out.println("Ingrese cantidad de trabajos realizados: ");
         trabajosRealizados = Entrada.nextInt();
-        TrabajosRealizados Trabajos = new TrabajosRealizados();
+        PortafolioTrabajos Trabajos = new PortafolioTrabajos();
         for (int j=0;j<trabajosRealizados;j++){
             System.out.println("Ingrese Datos");
             Trabajos.InsertarTrabajos();
@@ -151,7 +151,7 @@ public class Usuario implements Metodos{
         
         System.out.println("Ingrese Cantidad de cursos rendidos: ");
         cursosRendidos = Entrada.nextInt();
-        CursoCursado Cursos = new CursoCursado();
+        PortafolioCursos Cursos = new PortafolioCursos();
         for (int i=0;i<cursosRendidos;i++){
             System.out.println("Ingrese Datos: ");
             Cursos.IngresarCurso();

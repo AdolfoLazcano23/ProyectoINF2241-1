@@ -22,7 +22,7 @@ public class ArchivoTrabajos {
         this.Ruta = Ruta;
     }
     
-    public void GenerarTrabajos(String[] header, ArrayList<TrabajosRealizados> Datos) throws IOException{
+    public void GenerarTrabajos(String[] header, ArrayList<PortafolioTrabajos> Datos) throws IOException{
         
         File file = new File(this.Ruta);
         try{
