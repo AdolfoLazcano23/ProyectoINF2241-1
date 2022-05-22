@@ -125,7 +125,7 @@ public class OfertaTrabajo implements Metodos{
         }
     }
     
-    public void MostrarOferta(int Sueldo){
+    public void Mostrar(int Sueldo){
         
         for (int i=0;i<ListaOferta.size();i++){
             

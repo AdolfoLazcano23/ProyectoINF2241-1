@@ -94,7 +94,7 @@ public class Menu {
                     else{
                         System.out.println("Ingrese Sueldo: ");
                         Sueldo = teclado.nextInt();
-                        OfertaLaboral.MostrarOferta(Sueldo);
+                        OfertaLaboral.Mostrar(Sueldo);
                     }
                     break;
                 case 5:
@@ -150,7 +150,7 @@ public class Menu {
                     else{
                         System.out.println("Ingrese costo: ");
                         costo = teclado.nextInt();
-                        Cursos.MostrarCursos(costo);
+                        Cursos.Mostrar(costo);
                         }
                     break;
                 }

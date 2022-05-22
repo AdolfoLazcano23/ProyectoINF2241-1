@@ -86,7 +86,7 @@ public class Curso implements Metodos{
         }
     }
     
-    public void MostrarCursos(int Costo){
+    public void Mostrar(int Costo){
         
         for (int i=0;i<ListaCursos.size();i++){
             if (Costo==ListaCursos.get(i).Costo){

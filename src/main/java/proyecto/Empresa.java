@@ -1,7 +1,7 @@
 
 package proyecto;
 
-public class Empresa implements Metodos{
+public class Empresa{
     
     private String Nombre;
     private String Rut;
@@ -10,19 +10,6 @@ public class Empresa implements Metodos{
         
     }
     
-    
-    //Comportamientos
-    public void CrearEmpresa(){
-        
-    }
-    
-    public void EliminarEmpresa(){
-        
-    }
-    
-    public void MostrarEmpresa(){
-        
-    }
     
     //Accesores
     public String getNombre(){

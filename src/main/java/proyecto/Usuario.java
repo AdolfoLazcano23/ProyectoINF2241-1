@@ -231,6 +231,10 @@ public class Usuario implements Metodos{
         return false;
     }
     
+    public void Mostrar(int  N){
+        
+    }
+    
     public void Editar(int opcion,String codigo){
         
         String nuevoNombre,nuevoApellido,nuevoRut,nuevoCargo;
