@@ -151,4 +151,12 @@ public class OfertaTrabajo implements Metodos{
             }
         }
     }
+    
+    public void Sueldos(int min, int max){
+        
+        for (int i=0;i<ListaOferta.size();i++){
+            if ((ListaOferta.get(i).Sueldo>min) && (ListaOferta.get(i).Sueldo<max))
+                System.out.println("Empresa: "+ListaOferta.get(i).NombreEmpresa);
+        }
+    }
 }

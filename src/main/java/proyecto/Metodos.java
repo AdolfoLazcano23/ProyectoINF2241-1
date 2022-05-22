@@ -17,4 +17,5 @@ public interface Metodos {
     public void Mostrar();
     
     public void Eliminar(String N) throws IOException;
+    
 }

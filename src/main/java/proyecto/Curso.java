@@ -104,6 +104,14 @@ public class Curso implements Metodos{
             
             if(Nombre.equals(ListaCursos.get(i).Nombre))
                 ListaCursos.remove(i);
+        }        
+    }
+    
+    public void Costos(int min,int max){
+        
+        for (int i=0;i<ListaCursos.size();i++){
+            if ((ListaCursos.get(i).Costo>min) && (ListaCursos.get(i).Costo<max))
+                System.out.println("Curso: "+ListaCursos.get(i).getNombre());
         }
-    }    
+    }
 }
