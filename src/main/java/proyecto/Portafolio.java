@@ -18,5 +18,4 @@ public abstract class Portafolio {
     public abstract void Mostrar();
     public abstract void Eliminar(String N);
     
-    
 }

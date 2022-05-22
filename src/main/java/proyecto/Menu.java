@@ -67,7 +67,7 @@ public class Menu {
             System.out.println("2-  ELIMINAR");
             System.out.println("3-  ACTUALIZAR");
             System.out.println("4-  MOSTRAR LISTA OFERTAS");
-            System.out.println("5-  BUSCAR");
+            System.out.println("5-  FILTRAR");
             System.out.println("6-  VOLVER");
             opcion = teclado.nextInt();
 
@@ -120,7 +120,7 @@ public class Menu {
         System.out.println("2-  ELIMINAR");
         System.out.println("3-  ACTUALIZAR");
         System.out.println("4-  MOSTRAR LISTA CURSOS");
-        System.out.println("5-  BUSCAR");
+        System.out.println("5-  FILTRAR");
         System.out.println("6-  VOLVER");
         opcion = teclado.nextInt();
 
