@@ -166,20 +166,23 @@ public class Menu {
                     break;
                 }
             }
-        } while (opcion!= 5);
+        } while (opcion!= 6);
     }
 
     public static void menuUsuario() throws IOException{
         
         usuarios.InsertarDatosArchivo();
         Scanner teclado = new Scanner(System.in);
-        int opcion, cantidad;
+        int opcion, cantidad, opcionDos;
+        String codigo;
+        
         do {
         System.out.println("1-  NUEVO USUARIO");
-        System.out.println("2-  ELIMINAR USUARIO(NoSirve)");
-        System.out.println("3-  ACTUALIZAR(NoSirve)");
+        System.out.println("2-  ELIMINAR USUARIO");
+        System.out.println("3-  ACTUALIZAR");
         System.out.println("4-  MOSTRAR LISTA USUARIOS");
-        System.out.println("5-  VOLVER");
+        System.out.println("5-  EDITAR");
+        System.out.println("6-  VOLVER");
         opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -203,13 +206,20 @@ public class Menu {
                     System.out.println();
                     break;
                 }
-                case 5: {
+                case 5:
+                    System.out.println("Ingrese Rut del usuario a Editar: ");
+                    codigo = teclado.next();
+                    System.out.println("1.Nombre - 2.Apellido - 3.Rut - 4.Cargo - 5.Telefono");
+                    opcionDos = teclado.nextInt();
+                    usuarios.Editar(opcionDos,codigo);
+                    break;
+                case 6: {
                     Menu.desplegarMenuPrincipal();
                     break;
                 }
             }
             System.out.println("");
-        } while ( opcion != 5);
+        } while ( opcion != 6);
     }
     
 }

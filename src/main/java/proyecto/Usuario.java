@@ -146,7 +146,7 @@ public class Usuario implements Metodos{
         PortafolioTrabajos Trabajos = new PortafolioTrabajos();
         for (int j=0;j<trabajosRealizados;j++){
             System.out.println("Ingrese Datos");
-            Trabajos.InsertarTrabajos();
+            Trabajos.Crear();
         }
         
         System.out.println("Ingrese Cantidad de cursos rendidos: ");
@@ -154,7 +154,7 @@ public class Usuario implements Metodos{
         PortafolioCursos Cursos = new PortafolioCursos();
         for (int i=0;i<cursosRendidos;i++){
             System.out.println("Ingrese Datos: ");
-            Cursos.IngresarCurso();
+            Cursos.Crear();
         }
         
         Usuario usuario = new Usuario(nombre, apellido, ubicacion, cargo, rut, telefono);
@@ -229,5 +229,55 @@ public class Usuario implements Metodos{
                 return true;
         }
         return false;
+    }
+    
+    public void Editar(int opcion,String codigo){
+        
+        String nuevoNombre,nuevoApellido,nuevoRut,nuevoCargo;
+        int nuevoTelefono;
+        Scanner teclado = new Scanner(System.in);
+        
+        if(opcion == 1){
+            System.out.println("Ingrese nuevo nombre: ");
+            nuevoNombre = teclado.next();
+            for (int i=0;i<Lusuarios.size();i++){
+                if (codigo.equals(Lusuarios.get(i).getRut())){
+                    Lusuarios.get(i).setNombre(nuevoNombre);
+                }
+            }
+        }
+        if(opcion == 2){
+            System.out.println("Ingrese nuevo apellido: ");
+            nuevoApellido = teclado.next();
+            for (int i=0;i<Lusuarios.size();i++){
+                if (codigo.equals(Lusuarios.get(i).getRut()))
+                    Lusuarios.get(i).setApellido(nuevoApellido);
+            }
+        }
+        if(opcion == 3){
+            System.out.println("Ingrese nuevo rut: ");
+            nuevoRut = teclado.next();
+            for (int i=0;i<Lusuarios.size();i++){
+                if(codigo.equals(Lusuarios.get(i).getRut()))
+                    Lusuarios.get(i).setRut(nuevoRut);
+            }
+        }
+        if(opcion == 4){
+            System.out.println("Ingrese nuevo cargo: ");
+            nuevoCargo = teclado.next();
+            for (int i=0;i<Lusuarios.size();i++){
+                if(codigo.equals(Lusuarios.get(i).getRut()))
+                    Lusuarios.get(i).setCargo(nuevoCargo);
+            }
+        }
+        if(opcion == 5){
+            System.out.println("Ingrese nuevo telefono: ");
+            nuevoTelefono = teclado.nextInt();
+            for (int i=0;i<Lusuarios.size();i++){
+                if(codigo.equals(Lusuarios.get(i).getRut()))
+                    Lusuarios.get(i).setTelefono(nuevoTelefono);
+            }
+        }
+        System.out.println("USUARIO EDITADO CON EXITO");
     }
 }
