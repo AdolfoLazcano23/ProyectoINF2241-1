@@ -182,7 +182,8 @@ public class Menu {
         System.out.println("3-  ACTUALIZAR");
         System.out.println("4-  MOSTRAR LISTA USUARIOS");
         System.out.println("5-  EDITAR");
-        System.out.println("6-  VOLVER");
+        System.out.println("6-  BUSCAR");
+        System.out.println("7-  VOLVER");
         opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -213,13 +214,19 @@ public class Menu {
                     opcionDos = teclado.nextInt();
                     usuarios.Editar(opcionDos,codigo);
                     break;
-                case 6: {
+                case 6:
+                    String tempRut;
+                    System.out.println("Ingrese rut del Usuario: ");
+                    tempRut = teclado.next();
+                    usuarios.Buscar(tempRut);
+                    break;
+                case 7: {
                     Menu.desplegarMenuPrincipal();
                     break;
                 }
             }
             System.out.println("");
-        } while ( opcion != 6);
+        } while ( opcion != 7);
     }
     
 }

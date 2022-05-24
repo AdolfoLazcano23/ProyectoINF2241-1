@@ -16,6 +16,7 @@ public class Usuario implements Metodos{
     private ArrayList<Usuario> Lusuarios = new ArrayList<Usuario>();
     private ArrayList<PortafolioCursos> LCursos = new ArrayList<PortafolioCursos>();
     private ArrayList<PortafolioTrabajos> LTrabajos = new ArrayList<PortafolioTrabajos>();
+    Usuario usuario = new Usuario();
     
     
     Usuario(){
@@ -229,6 +230,47 @@ public class Usuario implements Metodos{
                 return true;
         }
         return false;
+    }
+    
+    public boolean Encontrado(String Rut){
+        
+        for (int i=0;i<Lusuarios.size();i++){
+            if (Rut.equals(Lusuarios.get(i).getRut()))
+                return true;
+        }
+        return false;
+    }
+    
+    public void Buscar(String Rut){
+        if (Encontrado(Rut)){
+            usuario.MostrarUsuario(Rut);
+        }
+    }
+    
+    public void MostrarUsuario(String Rut){
+        for (int i=0;i<Lusuarios.size();i++){
+            if (Rut.equals(Lusuarios.get(i).getRut())){
+                System.out.println("Nombre: "+Lusuarios.get(i).Nombre+" "+Lusuarios.get(i).Apellido);
+                System.out.println("Rut: "+Lusuarios.get(i).Rut);
+                System.out.println("Telefono: " +Lusuarios.get(i).Telefono);
+                System.out.println("Cargo: " +Lusuarios.get(i).Cargo);
+                
+                System.out.println("Trabajos Realizados: ");
+                for(int k=0;k<Lusuarios.get(i).LTrabajos.size();k++){
+                    System.out.println("Empresa: "+Lusuarios.get(i).LTrabajos.get(k).getNombreEmpresa());
+                    System.out.println("Area: "+Lusuarios.get(i).LTrabajos.get(k).getArea());
+                    System.out.println("Duracion: "+Lusuarios.get(i).LTrabajos.get(k).getDuracion());
+                    System.out.println("----------");
+                }
+                System.out.println("Cursos Cursados: ");
+                for(int j=0;j<Lusuarios.get(i).LCursos.size();j++){
+                    System.out.println("Nombre: "+Lusuarios.get(i).LCursos.get(j).getNombre());
+                    System.out.println("Area: "+Lusuarios.get(i).LCursos.get(j).getArea());
+                    System.out.println("Duracion: "+Lusuarios.get(i).LCursos.get(j).getDuracion());
+                    System.out.println("----------");
+                }
+            }
+        }
     }
     
     public void Mostrar(int  N){
