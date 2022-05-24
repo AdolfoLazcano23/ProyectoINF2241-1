@@ -218,7 +218,7 @@ public class Menu {
                     String tempRut;
                     System.out.println("Ingrese rut del Usuario: ");
                     tempRut = teclado.next();
-                    usuarios.Buscar(tempRut);
+                    usuarios.MostrarUsuario(tempRut);
                     break;
                 case 7: {
                     Menu.desplegarMenuPrincipal();

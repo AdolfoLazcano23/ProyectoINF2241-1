@@ -232,22 +232,10 @@ public class Usuario implements Metodos{
         return false;
     }
     
-    public boolean Encontrado(String Rut){
-        
-        for (int i=0;i<Lusuarios.size();i++){
-            if (Rut.equals(Lusuarios.get(i).getRut()))
-                return true;
-        }
-        return false;
-    }
-    
-    public void Buscar(String Rut){
-        if (Encontrado(Rut)){
-            usuario.MostrarUsuario(Rut);
-        }
-    }
     
     public void MostrarUsuario(String Rut){
+        
+        
         for (int i=0;i<Lusuarios.size();i++){
             if (Rut.equals(Lusuarios.get(i).getRut())){
                 System.out.println("Nombre: "+Lusuarios.get(i).Nombre+" "+Lusuarios.get(i).Apellido);
@@ -255,14 +243,14 @@ public class Usuario implements Metodos{
                 System.out.println("Telefono: " +Lusuarios.get(i).Telefono);
                 System.out.println("Cargo: " +Lusuarios.get(i).Cargo);
                 
-                System.out.println("Trabajos Realizados: ");
+                System.out.println("Trabajos Realizados "+LTrabajos.size());
                 for(int k=0;k<Lusuarios.get(i).LTrabajos.size();k++){
                     System.out.println("Empresa: "+Lusuarios.get(i).LTrabajos.get(k).getNombreEmpresa());
                     System.out.println("Area: "+Lusuarios.get(i).LTrabajos.get(k).getArea());
                     System.out.println("Duracion: "+Lusuarios.get(i).LTrabajos.get(k).getDuracion());
                     System.out.println("----------");
                 }
-                System.out.println("Cursos Cursados: ");
+                System.out.println("Cursos Cursados "+LCursos.size());
                 for(int j=0;j<Lusuarios.get(i).LCursos.size();j++){
                     System.out.println("Nombre: "+Lusuarios.get(i).LCursos.get(j).getNombre());
                     System.out.println("Area: "+Lusuarios.get(i).LCursos.get(j).getArea());
@@ -271,6 +259,7 @@ public class Usuario implements Metodos{
                 }
             }
         }
+
     }
     
     public void Mostrar(int  N){
