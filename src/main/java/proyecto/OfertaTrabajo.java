@@ -159,4 +159,20 @@ public class OfertaTrabajo implements Metodos{
                 System.out.println("Empresa: "+ListaOferta.get(i).NombreEmpresa);
         }
     }
+    
+    public void Buscar(String rutEmpresa){
+        
+        for (int i=0;i<ListaOferta.size();i++){
+            if (rutEmpresa.equals(ListaOferta.get(i).getRutEmpresa())){
+                System.out.println("Nombre: "+ListaOferta.get(i).NombreEmpresa);
+                System.out.println("Rut: "+ListaOferta.get(i).RutEmpresa);
+                System.out.println("Area: "+ListaOferta.get(i).Area);
+                System.out.println("Cargo: "+ListaOferta.get(i).Cargo);
+                System.out.println("Duracion "+ListaOferta.get(i).Duracion);
+                System.out.println("Sueldo: "+ListaOferta.get(i).Sueldo);
+                System.out.println("Ubicacion: "+ListaOferta.get(i).Ubicacion);
+                System.out.println("------------------------------------------");
+            }
+        }
+    }
 }

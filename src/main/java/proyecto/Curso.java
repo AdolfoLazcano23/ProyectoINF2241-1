@@ -114,4 +114,16 @@ public class Curso implements Metodos{
                 System.out.println("Curso: "+ListaCursos.get(i).getNombre());
         }
     }
+    
+    public void Buscar(String Nombre){
+        
+        for (int i=0;i<ListaCursos.size();i++){
+            if (Nombre.equals(ListaCursos.get(i).getNombre())){
+                System.out.println("Nombre: "+ListaCursos.get(i).Nombre);
+                System.out.println("Area: "+ListaCursos.get(i).Area);
+                System.out.println("Duracion: "+ListaCursos.get(i).Duracion);
+                System.out.println("Costo: "+ListaCursos.get(i).Costo);
+            }
+        }
+    }
 }

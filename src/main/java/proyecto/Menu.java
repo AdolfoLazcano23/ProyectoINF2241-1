@@ -60,7 +60,7 @@ public class Menu {
 
         Scanner teclado = new Scanner(System.in);
         int opcion,sueldoMin,sueldoMax;
-        String Cargo;
+        String Cargo,tempRut;
         
         do {
             System.out.println("1-  INGRESAR");
@@ -68,7 +68,8 @@ public class Menu {
             System.out.println("3-  ACTUALIZAR");
             System.out.println("4-  MOSTRAR LISTA OFERTAS");
             System.out.println("5-  FILTRAR");
-            System.out.println("6-  VOLVER");
+            System.out.println("6-  BUSCAR");
+            System.out.println("7-  VOLVER");
             opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -105,23 +106,29 @@ public class Menu {
                     OfertaLaboral.Sueldos(sueldoMin, sueldoMax);
                     break;
                 case 6:
+                    System.out.println("Digite rut de la empresa: ");
+                    tempRut = teclado.next();
+                    OfertaLaboral.Buscar(tempRut);
+                case 7:
                     Menu.desplegarMenuPrincipal();
                     break;
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
     }
 
     public static void menuCurso() throws IOException {
 
         Scanner teclado = new Scanner(System.in);
         int opcion,costoMin,costoMax;
+        String tempNombre;
         do{
         System.out.println("1-  INGRESAR");
         System.out.println("2-  ELIMINAR");
         System.out.println("3-  ACTUALIZAR");
         System.out.println("4-  MOSTRAR LISTA CURSOS");
         System.out.println("5-  FILTRAR");
-        System.out.println("6-  VOLVER");
+        System.out.println("6-  BUSCAR");
+        System.out.println("7-  VOLVER");
         opcion = teclado.nextInt();
 
             switch (opcion) {
@@ -140,7 +147,7 @@ public class Menu {
                     System.out.println("Actualizado");
                     break;
                 }
-                case 4: {
+                case 4:
                     int opc2,costo;
                     System.out.println("1-   MOSTRAR TODOS");
                     System.out.println("2-   MOSTRAR POR SUELDO");
@@ -153,7 +160,6 @@ public class Menu {
                         Cursos.Mostrar(costo);
                         }
                     break;
-                }
                 case 5:
                     System.out.println("Ingrese costo minimo: ");
                     costoMin = teclado.nextInt();
@@ -161,12 +167,15 @@ public class Menu {
                     costoMax = teclado.nextInt();
                     Cursos.Costos(costoMin, costoMax);
                     break;
-                case 6: {
+                case 6:
+                    System.out.println("Ingrese nombre del curso");
+                    tempNombre = teclado.next();
+                    Cursos.Buscar(tempNombre);
+                case 7: 
                     Menu.desplegarMenuPrincipal();
                     break;
-                }
             }
-        } while (opcion!= 6);
+        } while (opcion!= 7);
     }
 
     public static void menuUsuario() throws IOException{
