@@ -18,9 +18,11 @@ public class ProyectoMain {
     public static OfertaTrabajo OfertaLaboral = new OfertaTrabajo();
 
     public static void main(String[] args) throws ParseException, IOException {
-      
-    Menu m = new Menu();
-    m.desplegarMenuPrincipal();    
+    
+    paginaPrincipal openWindow = new paginaPrincipal();
+    openWindow.setVisible(true);
+    //Menu m = new Menu();
+    //m.desplegarMenuPrincipal();    
     }
 
 }

@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author adolfojr
  */
-public class loginUsuario extends javax.swing.JFrame {
+public class login extends javax.swing.JFrame {
 
     /**
      * Creates new form loginUsuario
      */
-    public loginUsuario() {
+    public login() {
         initComponents();
     }
 
@@ -103,6 +103,9 @@ public class loginUsuario extends javax.swing.JFrame {
         ingresar_txt.setText("INGRESAR");
         ingresar_txt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ingresar_txt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ingresar_txtMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 ingresar_txtMouseEntered(evt);
             }
@@ -178,6 +181,22 @@ public class loginUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passwordMousePressed
 
+    private void ingresar_txtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresar_txtMouseClicked
+        // TODO add your handling code here:
+        String user,pass;
+        String adminUser = "admin";
+        String adminPass = "admin";
+        
+        user = ingresar_usuario.getText().trim();
+        pass = ingresar_usuario.getText().trim();
+        
+        if(user.equals(adminUser) && pass.equals(adminPass)){
+            adminWindow window1 = new adminWindow();
+            window1.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_ingresar_txtMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -195,20 +214,21 @@ public class loginUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(loginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(loginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(loginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(loginUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new loginUsuario().setVisible(true);
+                new login().setVisible(true);
             }
         });
     }

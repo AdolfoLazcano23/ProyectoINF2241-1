@@ -53,6 +53,11 @@ public class paginaPrincipal extends javax.swing.JFrame {
         iniciarSesionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         iniciarSesionLabel.setText("INICIAR SESIÓN");
         iniciarSesionLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iniciarSesionLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iniciarSesionLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout iniciarSesionLayout = new javax.swing.GroupLayout(iniciarSesion);
         iniciarSesion.setLayout(iniciarSesionLayout);
@@ -162,6 +167,13 @@ public class paginaPrincipal extends javax.swing.JFrame {
         
         cargoField.setText("");
     }//GEN-LAST:event_cargoFieldMousePressed
+
+    private void iniciarSesionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarSesionLabelMouseClicked
+        // TODO add your handling code here:
+        login loginWindow = new login();
+        loginWindow.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_iniciarSesionLabelMouseClicked
 
     /**
      * @param args the command line arguments
