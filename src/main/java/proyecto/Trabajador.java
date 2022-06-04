@@ -7,23 +7,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Usuario implements Metodos{
+public class Trabajador implements Metodos{
     
     private String Nombre,Apellido, Ubicacion, Cargo, Rut;
     private int Telefono;
     Scanner Entrada = new Scanner(System.in);
     
-    private ArrayList<Usuario> Lusuarios = new ArrayList<Usuario>();
+    private ArrayList<Trabajador> Lusuarios = new ArrayList<Trabajador>();
     private ArrayList<PortafolioCursos> LCursos = new ArrayList<PortafolioCursos>();
     private ArrayList<PortafolioTrabajos> LTrabajos = new ArrayList<PortafolioTrabajos>();
-    Usuario usuario = new Usuario();
+    Trabajador usuario = new Trabajador();
     
     
-    Usuario(){
+    Trabajador(){
         
     }   
     
-    Usuario(String nombre, String apellido, String ubicacion, String cargo, String rut, int telefono){
+    Trabajador(String nombre, String apellido, String ubicacion, String cargo, String rut, int telefono){
         this.Nombre = nombre;
         this.Apellido = apellido;
         this.Ubicacion = ubicacion;
@@ -90,7 +90,7 @@ public class Usuario implements Metodos{
 
         String file = "src/test/java/usuarios.txt";
         
-        Usuario[] usuariosArchivo = new Usuario[5];
+        Trabajador[] usuariosArchivo = new Trabajador[5];
 
         try {
 
@@ -100,7 +100,7 @@ public class Usuario implements Metodos{
             while (scanner.hasNext()) {
                 for (int j = 0; j < usuariosArchivo.length; j++) {
                     String[] datos = scanner.next().split(";");
-                    usuariosArchivo[j] = new Usuario();
+                    usuariosArchivo[j] = new Trabajador();
                     usuariosArchivo[j].setNombre(datos[0]);
                     usuariosArchivo[j].setApellido(datos[1]);
                     usuariosArchivo[j].setUbicacion(datos[2]);
@@ -158,10 +158,10 @@ public class Usuario implements Metodos{
             Cursos.Crear();
         }
         
-        Usuario usuario = new Usuario(nombre, apellido, ubicacion, cargo, rut, telefono);
+        Trabajador usuario = new Trabajador(nombre, apellido, ubicacion, cargo, rut, telefono);
         Lusuarios.add(usuario);
 
-        System.out.println("CLiente creado!");
+        System.out.println("Cliente creado!");
     }
     
     public void Eliminar(String Rut) {
@@ -234,7 +234,6 @@ public class Usuario implements Metodos{
     
     
     public void MostrarUsuario(String Rut){
-        
         
         for (int i=0;i<Lusuarios.size();i++){
             if (Rut.equals(Lusuarios.get(i).getRut())){

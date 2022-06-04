@@ -13,7 +13,7 @@ public class Menu {
     
     public static OfertaTrabajo OfertaLaboral;
     public static Curso Cursos;
-    public static Usuario usuarios = new Usuario();
+    public static Trabajador usuarios = new Trabajador();
     
     private String usuario;
     private Scanner leer;
@@ -186,7 +186,7 @@ public class Menu {
         String codigo;
         
         do {
-        System.out.println("1-  NUEVO USUARIO");
+        System.out.println("1-  CREAR USUARIO");
         System.out.println("2-  ELIMINAR USUARIO");
         System.out.println("3-  ACTUALIZAR");
         System.out.println("4-  MOSTRAR LISTA USUARIOS");

@@ -14,7 +14,7 @@ public interface Metodos {
     
     public void Crear();
     
-    public void Mostrar();
+    public void Mostrar() throws IOException;
     
     public void Mostrar(int N);
     
